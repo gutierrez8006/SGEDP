@@ -1,0 +1,32 @@
+<div class="row mar-topboo-10px">
+    <div class="col-lg-12">
+        <a href="#/customer/listado" class="btn btn-primary">Volver</a>
+    </div>
+</div>
+<div class="row">
+    <form class="form-horizontal" id="formNuevo" name="formNuevo" novalidate>
+        <div class="form-group" ng-class="{'has-error': (formNuevo.txtNewCusName.$error.required || formNuevo.txtNewCusName.$error.maxlength) && formNuevo.txtNewCusName.$dirty}">
+            <label for="txtNewCusName" class="col-lg-1 control-label">Name</label>
+            <div class="col-lg-4">
+                <input type="text" id="txtNewCusName" name="txtNewCusName" class="form-control" ng-model="$ctrlNewCust.customer.name" ng-maxlength="250" placeholder="Name" required/>
+                <span ng-show="formNuevo.txtNewCusName.$error.required && formNuevo.txtNewCusName.$dirty">Campo requerido</span>
+                <span ng-show="formNuevo.txtNewCusName.$error.maxlength">Maximo 250 caracteres</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-1">
+                <button type="button" ng-disabled="formNuevo.$invalid" class="btn btn-primary" ng-click="$ctrlNewCust.guardar()">Guardar</button>
+            </div>
+        </div>
+    </form>        
+</div>
+<div ng-show="$ctrlNewCust.bussinessMessages.length > 0">
+    <div class="col-sm-12">
+        <div>Se han producido los siguientes errores</div>
+        <uib-alert ng-repeat="bussinessMessage in $ctrlNewCust.bussinessMessages" type="danger" close="$ctrlNewCust.closeAlert($index)">
+            <strong>{{bussinessMessage.fieldName}}:</strong>
+            {{bussinessMessage.message}}.
+        </uib-alert>
+        <button ng-click="$ctrlNewCust.bussinessMessages = []" class="btn btn-danger">Quitar mensajes</button>
+    </div>
+</div>

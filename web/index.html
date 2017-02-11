@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" ng-app="app" lang="eng"> <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>SGDEP</title>
+        <link type="image/x-icon" rel="shortcut icon" href="favicon.ico" />
+        <meta name="description" content="Seguros medicos">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link data-require="bootstrap-css@*" rel="stylesheet" href="lib/bootstrap/css/bootstrap-3.3.6.min.css">
+        <script type="text/javascript">
+            document.write('<base href="' + document.location + '"/>');
+        </script>
+        <!-- * importante setea los iconos desde el CDN -->
+
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.0/css/smoothness/jquery-ui-1.10.0.custom.min.css"/>
+        <link rel="stylesheet" href="css/estilo.css" media="screen" title="no title" charset="utf-8">
+
+        <script src="lib/modernizr/modernizr-2.8.3-respond-1.4.2.min.js" charset="utf-8"></script>
+    </head>
+
+    <body ng-controller="MainController">
+
+        <div class="container">
+            <ng-include src="'common/partials/cabecera.html'"></ng-include>
+
+            <div ng-view></div>
+
+            <ng-include src="'common/partials/pie.html'"></ng-include>
+        </div>
+
+        <script type="text/javascript" src="lib/jqueryJs/js/jquery.min-2.1.1.js"></script>
+        <script type="text/javascript" src="lib/jqueryJs/js/jquery-ui-1.10.0.js"></script>
+        <script type="text/javascript" src="lib/angularjs/js/angular-1.5.3.min.js"></script>
+        <script type="text/javascript" src="lib/angularjs/js/angular-route-1.5.3.min.js"></script>
+        <script type="text/javascript" src="lib/angularjs/js/angular-locale_es-pe.js"></script>
+        <script src="lib/angularjs/js/angular-animate-1.5.3.js" charset="utf-8"></script>
+        <script type="text/javascript" src="lib/angularjs/js/angular-sanitize-1.5.3.min.js"></script>
+        <script type="text/javascript" src="lib/angularjs/js/angular-touch-1.5.3.min.js"></script>
+        <script data-semver="1.3.3" src="lib/bootstrap/js/ui-bootstrap-tpls-1.3.3.js" charset="utf-8"></script>
+        <script type="text/javascript">
+                    var app = angular.module('app', ['ngRoute', 'ngAnimate', 'ngSanitize', 'ngTouch', 'ui.bootstrap']);
+        </script>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="app-route.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript" src="common/directives/caDatepicker.js"></script>
+        <script type="text/javascript" src="common/filters/filteri18n.js"></script>
+        <!-- Seguro medico -->
+        <script type="text/javascript" src="seguromedico/common/services/remoteResource.js"></script>
+        <script type="text/javascript" src="seguromedico/seguromedico.js"></script>
+        <script type="text/javascript" src="seguromedico/seguromedico-router.js"></script>
+        <script type="text/javascript" src="seguromedico/seguromedico-detalle.js"></script>
+        <script type="text/javascript" src="seguromedico/seguromedico-listado.js"></script>
+        <!-- Customers -->
+        <script type="text/javascript" src="customer/common/directives/select-row-table.js"></script>
+        <script type="text/javascript" src="customer/customer.js"></script>
+        <script type="text/javascript" src="customer/common/services/customer-remoteResource.js"></script>
+        <script type="text/javascript" src="customer/customer-router.js"></script>
+        <script type="text/javascript" src="customer/customer-listado.js"></script>
+        <script type="text/javascript" src="customer/customer-editar.js"></script>
+        <script type="text/javascript" src="customer/customer-eliminar.js"></script>
+        <script type="text/javascript" src="customer/customer-nuevo.js"></script>
+    </body>
+</html>
